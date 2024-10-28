@@ -1,0 +1,30 @@
+collect three integers
+calculate the sum
+calculate the average
+calculate the product
+check for the smallest number
+check for the largest number
+
+
+Prompt the user to enter the first integer 
+save the collected value as "first"
+Prompt the user to enter the second integer
+save the collected value as "second"
+Prompt the user to enter the third integer
+save the collected value as "third"
+calculate the sum first + second + third
+save the calculated value as "sum"
+display sum
+Calculate the average sum/3
+save the calculated value as "average"
+display average
+calculate the product first * second * third 
+save the calculated value as "product"
+check for the smallest number 
+
+save as "smallest"
+display smallest
+check for the largest number
+save as "largest"
+display largest 
+

@@ -1,0 +1,40 @@
+Stage 1
+Collect 5 numbers from the user
+Determine the total number of negative,positive and zero values
+display result
+
+Stage 2
+prompt the user to enter the first value 
+save the collected value as "first"
+prompt the user to enter the second value 
+save the collected value as "second"
+prompt the user to enter the third value 
+save the collected value as "third"
+prompt the user to enter the fourth value 
+save the collected value as "fourth"
+prompt the user to enter the fifth value 
+save the collected value as "fifth"
+assign negative to 0
+assign positive to 0
+assign zero to 0
+
+if first <0 add 1 to negative
+if second <0 add 1 to negative
+if third <0 add 1 to negative
+if fourth <0 add 1 to negative
+if fifth <0 add 1 to negative
+
+if first >0 add 1 to positive
+if second <0 add 1 to positive
+if third <0 add 1 to positive
+if fourth <0 add 1 to positive
+if fifth <0 add 1 to positive
+
+if first =0 add 1 to zero
+if second =0 add 1 to zero
+if third =0 add 1 to zero
+if fourth =0 add 1 to zero
+if fifth =0 add 1 to zero
+
+Display negative, positive and zero
+

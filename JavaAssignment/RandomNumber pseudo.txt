@@ -1,0 +1,7 @@
+Generate a random number
+Save the number as "randomNumber"
+prompt the user to take a guess of the number
+save the users guess as "guess"
+if the user guess is higher than the randomly generated number print Too high
+if low print too low 
+if the same print congratulations 

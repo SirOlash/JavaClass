@@ -1,0 +1,20 @@
+Pseudo Multipe:
+Stage 1: 
+Collect two integers from the user
+Calculate the cube of the first
+calculate square of second 
+Check if the first is a multiple of second
+
+Stage 2: 
+Prompt the user to enter the first integer
+Save the collected value as "first"
+Prompt the use to enter the second integer
+Save the collected value as "second"
+Calculate first*3 
+Save the calculated value as "firsttrippled"
+Calculate second*2 
+Save the calculated value as "seconddoubled"
+Calculate firsttrippled%seconddoubled
+if answer=0 display firsttrippled is a multiple of seconddoubled
+
+

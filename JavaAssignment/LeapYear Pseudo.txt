@@ -1,0 +1,4 @@
+Prompt user to enter a year 
+Save the collected value as year
+if year % 4 = 0 print it is a leap year
+Else print it is not

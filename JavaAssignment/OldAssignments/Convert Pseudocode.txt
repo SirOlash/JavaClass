@@ -1,0 +1,13 @@
+Stage 1
+collect the number from user 
+convert to feet
+display result
+
+Stage 2
+Prompt user to enter the number in feet
+Save the collected value as "feet"
+calculate 0.305 * feet 
+Save the calculated result as "meters"
+display meters
+
+

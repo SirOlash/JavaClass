@@ -1,0 +1,9 @@
+prompt user to enter a number 
+save the given number as "number"
+check if number is 1 display "Monday"
+if number is 2 display "Tuesday"
+if number is 3 display "Wednesday"
+if number is 4 display "Thursday"
+if number is 5 display "Friday"
+if number is 6 display "Saturday"
+if number is 7 display "Sunday"

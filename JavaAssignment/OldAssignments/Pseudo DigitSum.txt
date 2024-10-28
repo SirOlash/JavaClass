@@ -1,0 +1,29 @@
+Pseudo DigitSum
+Stage 1:
+Collect an integer between 0-1000
+Use % toextract the digits
+Sum up the digits 
+Display result
+
+Stage 2:
+Prompt user to enter a number from 0-1000
+Save the collected digit as "Integer"
+Calculate Integer%10
+save the calculated value as "LastNumber"
+Calculate integer/10 
+save the calculated value as "FirstTwo"
+if FirstTwo==0, display "LastNumber"
+if FirstTwo!=0,
+Calculate FirstTwo%10 
+Save the calculated value as "MiddleNumber"
+Calculate FirstTwo/10 
+Save the calculated value as "FirstNumber"
+if FirstNumber==0,
+calculate MiddleNumber+LastNumber
+save the calculated value as "SumOfTwo"
+Display SumOfTwo
+if FirstNumber!=0,
+Calculate FirstNumber+MiddleNumber+LastNumber
+Save the calculated value as "SumOfThree"
+Display "SumOfThree"  
+ 

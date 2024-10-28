@@ -1,0 +1,8 @@
+Prompt user to enter number to be calculated
+Save the given value as "number" 
+Prompt user to enter the number of terms
+Save the given value as "terms"
+provided i = 0, which increases
+Calculate number * i
+save the calculated value as "table"
+Display number * i = table

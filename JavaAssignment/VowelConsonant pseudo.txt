@@ -1,0 +1,5 @@
+Prompt the user to enter a single character from the alphabet 
+Save the given letter as "alphabet"
+Check if "alphabet" is an alphabet and if the user doesn't enter more than one character. 
+if so, check if the character entered is AEIOU, if it is print vowel, else print consonant
+if user enters a number or more than one character enter invalid entry.

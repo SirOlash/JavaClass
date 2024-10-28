@@ -1,0 +1,19 @@
+Stage 1
+Collect the number from the user
+Check if it's a palindrome
+Display result
+
+Stage 2
+Prompt user to enter a three digit integer
+Save the collected value as integer
+calculate integer%10 
+Save the calculated result as "lastNumber"
+Calculate integer/100 
+save the calculated result as "firstNumber"
+Calculate integer/10 
+Save the calculated result as "firstTwo"
+Calculate firstTwo%10
+Save the calculated result as "middleNumber"
+if LastNumber==firstNumber.
+Display integer is a palindrome
+else display integer is not a palindrome

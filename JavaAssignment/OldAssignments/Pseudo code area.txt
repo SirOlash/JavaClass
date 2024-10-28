@@ -1,0 +1,17 @@
+Pseudo code: 
+Stage 1: 
+Collect the length of sides and height
+calculate the area and volume 
+display result
+
+Stage 2
+Prompt the user to enter the length of sides
+Save the collected value as "length"
+Prompt the user to enter the height of the triangle 
+Save the collected value as "height"
+Calculate the area using ((root 3)/4)* length^2
+Save the calculated result as "area"
+Calculate the volume using area * height 
+Save the calculated result as "volume"
+Display area .
+Display volume.

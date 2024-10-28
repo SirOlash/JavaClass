@@ -1,0 +1,7 @@
+Prompt the user to enter the first floating point number
+save the collected value as "firstFloat"
+Prompt the user to enter the second floating point number
+save the collected value as "secondFloat"
+
+Check if firstFloat is equal to secondFloat if so print they are the same 
+else print they are different 

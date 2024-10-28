@@ -1,0 +1,5 @@
+assign Integer.MIN_VALUE to largest 
+assign Integer.MAX_VALUE to smallest
+prompt user to enter a number and ask if they want to add more numbers
+Save the given number as "number" while checking for the largest and smallest.
+display the largest and smallest number

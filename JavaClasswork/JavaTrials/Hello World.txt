@@ -1,0 +1,7 @@
+stage 1:
+display Hello world
+stage 2:
+display Hello world using print
+display Hello world using printf
+display Hello world using println
+

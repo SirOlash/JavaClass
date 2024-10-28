@@ -1,0 +1,16 @@
+Stage 1
+Collect the number of sides on the polygon 
+Collect the length of a side
+calculate the area 
+Display result
+
+Stage 2
+Prompt the user to enter the number of sides on the polygon 
+Save the collected value as "numberOfSides" 
+Prompt the user to enter the length of a side 
+Save the collected value as "length"
+calculate length * length
+Save the calculated value as "lengthSquared"
+calculate (numberOfSides * lengthSquared) / (4 * tan (3.14/numberOfSides))
+save the calculated result as "area"
+display area

@@ -1,0 +1,11 @@
+Stage 1 
+calculate (4*10) + 284/2
+store the result as total
+display total
+
+stage 2
+calculate (4*10) + 284/2
+store the result as total
+display total with print 
+display total with printf
+display total with println  

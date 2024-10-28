@@ -1,0 +1,6 @@
+stage 1:
+display Hi my name is Olash and i write java
+stage 2:
+display Hi my name is Olash and i write java using print
+display Hi my name is Olash and i write java using printf
+display Hi my name is Olash and i write java using println

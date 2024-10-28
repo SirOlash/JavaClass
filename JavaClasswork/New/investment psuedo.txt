@@ -1,0 +1,27 @@
+Stage 1
+collect the investment amount 
+collect the annual interest rate
+collect the amount of years 
+calculate the future investment value
+display result
+
+Stage 2
+
+prompt user to enter the investment amount 
+Save the collected value as "investment"
+prompt user to enter annual interest rate 
+save the collected value as "interest"
+prompt user to enter the number of years
+save the collected value as "years" 
+calculate interest/12
+save the calculated value as "monthlyInterestRate"
+Calculate years*12
+save the calculated value as "power"
+
+
+Calculate investment * (1 + monthlyInterestRate) ^ power
+
+save calculated result as "future"
+display result
+  
+ 

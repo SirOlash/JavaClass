@@ -1,0 +1,17 @@
+Collect the amount of water from the user 
+collect the initial and final temperature from the user
+calculate the Energy
+Display result
+
+Stage 2
+Prompt the user to enter the amount of water in kilogram
+Save the collected value as "amount"
+Prompt the user to enter the initial temperature 
+Save the collected value as "initial"
+Prompt the user to enter the final temperature 
+Save the collected value as "final"
+Calculate amount *(final - initial) * 4184
+save the calculated result as "energy"
+Display energy
+
+

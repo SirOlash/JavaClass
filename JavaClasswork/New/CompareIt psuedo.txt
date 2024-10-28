@@ -1,0 +1,28 @@
+Stage 1
+Enter first , second, third number
+Separate the numbers for each of the entered 
+determine if the last number is similar
+display true or false
+
+Stage 2
+Prompt user to enter first integer
+save the collected value as "firstInteger"
+calculate firstInteger % 10
+save the calculated value as "lastFirstNumber"
+Prompt user to enter second integer
+save the collected value as "secondInteger"
+calculate secondInteger % 10
+save the calculated value as "lastSecondNumber"
+Prompt user to enter third integer
+save the collected value as "thirdInteger"
+calculate thirdInteger % 10
+save the calculated value as "lastThirdNumber"
+display true if lastFirstNumber = LastSecondNumber or
+if lastSecondNumber = lastThirdNumber or
+lastFirstNumber = lastThirdNumber
+else display false
+
+
+
+
+ 

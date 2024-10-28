@@ -1,0 +1,11 @@
+Stage 1 
+collect the number in pounds 
+convert to kilograms 
+display result
+
+Stage 2
+Prompt the user to enter a number in pounds
+Save the collected result as "pounds"
+Calculate pounds * 0.454 
+Save the calculated result as "kilograms"
+Display kilograms

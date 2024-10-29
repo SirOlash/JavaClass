@@ -16,16 +16,16 @@ public class QuadraticEquation{
 	double root2;
 
         if (determinant > 0) {
-            // two real and distinct roots
+         
             root1 = (-b + Math.sqrt(determinant)) / (2 * a);
             root2 = (-b - Math.sqrt(determinant)) / (2 * a);
             System.out.println("The roots are " + root1 + " and " + root2);
         } else if (determinant == 0) {
-            // two real and equal roots
+           
             root1 = -b / (2 * a);
             System.out.println("The roots are both " + root1 );
         } else {
-            // roots are not real numbers
+
             System.out.println("The roots are not real numbers.");
         }
     }

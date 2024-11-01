@@ -1,9 +1,9 @@
 public class FullMultiplicationTable{
    public static void main(String [] args){
-	for(int multiple = 1; multiple < 10; multiple++){
+	for(int number = 1; number < 10; number++){
 		for(int times = 1; times < 10; times++){
-			int product = multiple * times;
-			System.out.printf("%d * %d = %d\t",times,multiple,product);
+			int product = number * times;
+			System.out.printf("%d * %d = %d\t",times,number,product);
 			}
 			System.out.println();
 		}

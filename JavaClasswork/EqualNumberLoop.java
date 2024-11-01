@@ -22,7 +22,7 @@ public static void main(String[] args){
 	 input.nextLine();	
 	 answer = input.nextLine();}
 
-      while(answer.equalsIgnoreCase("Yes"));
+    while(answer.equalsIgnoreCase("Yes"));
 
 }
 }

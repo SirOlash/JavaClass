@@ -17,8 +17,8 @@ public class LargestSmallestLoop{
 	System.out.print("Do you want to add more numbers? yes/no: ");
 	answer=input.nextLine();}
 
-     // while (answer.equalsIgnoreCase("yes"));
-	while ("YESyesYes".contains(answer));
+       while (answer.equalsIgnoreCase("yes"));
+
 
       System.out.printf("The Largest number is: %d%n The Smallest number is: %d", largest,smallest); 	
 	

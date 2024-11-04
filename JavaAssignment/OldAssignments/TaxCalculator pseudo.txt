@@ -1,0 +1,12 @@
+prompt user to enter their name
+save the given name as "citizen"
+Prompt user to enter their earnings
+Save the value as "earnings"
+check if earnings is more than 30000 
+calculate 0.2 * earnings
+save the calculated value as tax
+display tax
+if earnings is less than 30000
+calculate 0.15 * earnings
+save the calculated value as tax
+display tax

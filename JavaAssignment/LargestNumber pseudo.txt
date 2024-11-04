@@ -1,0 +1,3 @@
+Prompt user to enter an integer
+Save the entered value as "integer"
+run a loop 10 times and calculate the largest number

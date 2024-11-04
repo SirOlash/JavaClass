@@ -1,0 +1,5 @@
+prompt user to Enter the amount of sales made last week
+Save the given value as "sales"
+calculate 0.09*sales + 200
+save the calculated result as total
+display total

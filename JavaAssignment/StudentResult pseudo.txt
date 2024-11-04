@@ -1,0 +1,4 @@
+Prompt user to enter either 1 or 2
+Save the entered value as "result"
+while studentCounter 1 run a loop until studentCounter is 10
+if result is either 1 or 2 calculate the total and print the result

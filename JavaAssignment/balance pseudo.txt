@@ -1,0 +1,11 @@
+prompt user to Enter your balance at the beginning of the month
+save the given value as "balance"
+prompt user to Enter the total of all items charged by the customer this month
+save the given value as "itemsCharged"
+prompt user to Enter the total of all credits applied to the customer's account this month
+save the given value as "credit"
+calculate balance + itemsCharged - credit
+save the result as "newBalance"
+Display newBalance
+
+

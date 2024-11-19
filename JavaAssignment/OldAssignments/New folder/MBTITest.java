@@ -9,51 +9,57 @@ public static void main(String[] args) {
 	String name = input.nextLine();
 
         String[][] questions = {
-            {" A. Expend energy, enjoy groups"," B. Conserve energy, enjoy one-on-one"},
-            {" A. Interpret literally"," B. look for meaning and possibilities"},
+            {" A. Expend energy, enjoy groups"," B. Conserve energy, enjoy one-on-one"," C. try this"},
+            {" A. Interpret literally"," B. look for meaning and possibilities",},
             {" A. logical, thinking, questioning"," B. empathetic, feeling, accommodating"},
-            {" A. organized, orderly"," B. flexible, adoptable"},
+            {" A. organized, orderly"," B. flexible, adoptable","C. Trty nity"},
             {" A. more outgoing, think out loud"," B. more reserved, think to yourself"},
             {" A. practical, realistic, experiential"," B. imaginative, innovative, theoretical"},
             {" A. candid, straight forward, frank"," B. tactful, kind, encouraging"},
-            {" A. plan, schedule"," B. unplanned, spontaneous"},
+            {" A. plan, schedule"," B. unplanned, spontaneous","C. Trty nity"},
             {" A. seek many tasks, public activities, interaction with others"," B. seek private, solitary activities with quiet to concentrate"},
             {" A. standard, usual, conventional"," B. different, novel, unique"},
             {" A. firm, tend to criticize, hold the line"," B. gentle, tend to appreciate, conciliate"},
-            {" A. regulated, structured"," B. easy going, live and let live"},
+            {" A. regulated, structured"," B. easy going, live and let live","C. Trty nity"},
             {" A. external, communicative, express yourself"," B. internal, reticent, keep to yourself"},
             {" A. focus on here and now"," B. look to the future, global perspective, big picture"},
             {" A. tough-minded, just"," B. tender-hearted, merciful"},
-            {" A. preparation, plan ahead"," B. go with the flow, adapt as you go"},
+            {" A. preparation, plan ahead"," B. go with the flow, adapt as you go","C. Trty nity"},
             {" A. active, initiate"," B. reflective, deliberate"},
             {" A. facts things what is"," B. ideas dreams, what would be, philosophical"},
             {" A. matter of fact issue-oriented"," B. sensitive, people-oriented, compassionate"},
             {" A. control, govern"," B. latitude, freedom"}};
 
 	
-	
 	int[] times = new int[4];
 	for (int number = 0; number < 4; number++) {
 		int countA = 0;
 		int countB = 0;
+		int countC = 0;
 		for (int row = number; row < 20; row += 4) {
-			while (true){
-				System.out.print(questions[row][0] + " " + questions[row][1] + "\nChoose A or B: ");
-   				String response = input.nextLine();
+			String response = "";
+
+			while(!response.equals("a") || !response.equals("b") || !response.equals("c")){
+			System.out.print(questions[row][0] + " " + questions[row][1] + "\n Choose A or B or C: ");
+   			response = input.nextLine();
 				response = response.toLowerCase();
 
     				if (response.equals("a")){
        					countA++;
-       					break;}
+					break;}
 				else if (response.equals("b")) {
         				countB++;
-        				break;}
-				else{System.out.println("I know this is an error pls retry again");}
+					break;}
+				else if (response.equals("c")) {
+        				countC++;
+					break;}
+				else {System.out.println("I know You made an error try again");}
 				}
 			}
 		times[number] = countA;
 		System.out.println("The number of A selected is: " + countA);
 		System.out.println("The number of B selected is: " + countB);
+		System.out.println("The number of C selected is: " + countC);
 		System.out.println();
 		}
 		

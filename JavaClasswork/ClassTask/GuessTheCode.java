@@ -5,7 +5,7 @@ public class GuessTheCode{
 
 	int randomNumber = 1000 + (int) (Math.random() * 9000);
 	
-	System.out.println()
+
         System.out.println("A secret 4-digit code has been generated. Try to guess it!");
 
         while (true) {

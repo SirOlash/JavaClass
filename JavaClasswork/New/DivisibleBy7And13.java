@@ -13,7 +13,6 @@ public static void main(String[] args){
 	for (int range = firstNumber; range <= secondNumber; range++){
 		if(range % 7 == 0 && range % 13 == 0){
 			System.out.println("The number divisible by both is " + range);
-			//number = range;
 			break;}
 			
 		else If (range % 7 != 0 && range % 13 != 0) System.out.print("No number is divisible");

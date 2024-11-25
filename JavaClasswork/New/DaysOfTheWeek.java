@@ -19,7 +19,9 @@ public static void main(String[] args){
 		case 6: System.out.print("Saturday!!!");
 			break;
 		case 7: System.out.print("Sunday!!!");
-			break;}
+			break;
+		default: System.out.print("Not a day of the week try again!!!");
+}
 
 }
 }

@@ -5,7 +5,7 @@ public static void main(String[] args){
   int guessNumber = 30;
   int number;
   
-    do{  System.out.print("Guess a number from 0-100: ");
+    do{  System.out.print("Guess the number: ");
 	number = input.nextInt();
 
 	if (number == guessNumber)System.out.print("Congratulations!!! Your guess is Correct "); 

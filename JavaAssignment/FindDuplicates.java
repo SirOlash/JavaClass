@@ -1,5 +1,5 @@
 public class FindDuplicates{
-    public static void main(String[] args) {
+public static void main(String[] args) {
         int[] numbers = {4,3,5,2,5,8,7,4,6,9,7};
 
         System.out.println("Duplicate values:");

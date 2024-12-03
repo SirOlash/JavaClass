@@ -5,7 +5,7 @@ public class StudentGrade{
  public static void main(String... args){
 	Scanner input = new Scanner(System.in);
 
-	  //ArrayList <Integer> subject = new ArrayList<Integer>();
+	//ArrayList <Integer> subject = new ArrayList<Integer>();
 	
 	System.out.print("How many students do you have?: ");
 	int amountOfStudents = input.nextInt();
@@ -22,19 +22,23 @@ public class StudentGrade{
 	
 	for(int student = 1; student <= amountOfStudents; student++){
 		for(int subjects = 1;subjects <= subjectOffered;subjects++ ){
-			while	
+
+				
 			System.out.println("Entering score for student " + student);
 			
 			System.out.print("Enter score for subject " + subjects + " : ");
 
 			int studentScore = input.nextInt();
 
-			if  studentScore >= 0 &&  studentScore <= 100{
+			if  (studentScore >= 0 &&  studentScore <= 100){
 				studentGrades [student - 1][subjects-1] = studentScore;
 
-			System.out.println("Saving >>>>>>>>>>>>>>>>>>>");
-			System.out.println("Saved successfully!!!");
-			System.out.println();
+				System.out.println("Saving >>>>>>>>>>>>>>>>>>>");
+				System.out.println("Saved successfully!!!");
+				System.out.println();}
+			else {System.out.println("Invalid Score!!!");
+				subjects--;
+			};
 	
 		}
 	}
@@ -96,18 +100,22 @@ public class StudentGrade{
 	public static void subjectSummary(int subjectOffered,int amountOfStudents,int[][] studentGrades){
 	System.out.println("SUBJECT SUMMARY");
 	
+
 	int highestSubject = studentGrades [0][0];
 	for (int sub = 0;sub < subjectOffered;sub++){
 		for(int stud = 0; stud < amountOfStudents; stud++){
 			if (highestSubject < studentGrades [sub][stud]){
 				highestSubject = studentGrades [sub][stud];
 			}
+			//System.out.println(highestSubject);
 		}
-		System.out.print(highestSubject);
-		//System.out.print();
+		
+		//System.out.println(sub);
+		//System.out.print(stud);
+
 	}
 
-	/*for (int summary = 1; summary <= subjectOffered;summary++){
+	/*for (int summary = 1; summary <= subjectOffered; summary++){
 		System.out.print("Subject" + summary);
 		System.out.print("Highest scoring student is: Student" + summary);		
 	

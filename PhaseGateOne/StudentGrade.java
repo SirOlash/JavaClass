@@ -18,7 +18,8 @@ public class StudentGrade{
 	System.out.println("Saving >>>>>>>>>>>>>>>>>>>");
 	System.out.println("Saved successfully!!!");
 	System.out.println();
-
+	
+	
 	for(int student = 1; student <= amountOfStudents; student++){
 		for(int subjects = 1;subjects <= subjectOffered;subjects++ ){
 			System.out.println("Entering score for student " + student);
@@ -41,25 +42,41 @@ public class StudentGrade{
 
 	public static void displayScore(int amountOfStudents, int subjectOffered,int[][] studentGrades ){
 		System.out.println("========================================================");
-	System.out.print("STUDENT\t\t");
+	System.out.print("STUDENT		");
 		for(int counter = 1; counter <= subjectOffered; counter++){  
 			System.out.print("SUB"+ counter + "\t");
 		}		
-	System.out.println("TOTAL");
+	System.out.print("TOT\t");
+	System.out.print("AVE\t");
+	System.out.println("POS\t");
 
 	System.out.println("========================================================");
 	int total = 0;
+	
 	for(int count = 1; count <= amountOfStudents; count++){
 		System.out.print("Student" + count +"\t");
 		for(int counts = 1; counts <= subjectOffered; counts++){
 			System.out.print(studentGrades[count - 1][counts -1 ] + "\t" );
-			total += studentGrades[count - 1][counts -1 ];
+			total += studentGrades[count - 1][counts -1];
+			 
 	}
-		System.out.print(total);
-		System.out.println("");
+		
+		System.out.print(total + "\t");
+		double average = total / subjectOffered;
+		System.out.printf("%.2f\t", average);
+		//System.out.print("%.2f\t", average);
+		
+		//int position = average;
+		
+		
+		System.out.println();
 	
 
 	}
+	
+	System.out.println("========================================================");
+	System.out.println();
+	System.out.println("========================================================");
 
 
    

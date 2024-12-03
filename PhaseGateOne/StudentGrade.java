@@ -22,10 +22,15 @@ public class StudentGrade{
 	
 	for(int student = 1; student <= amountOfStudents; student++){
 		for(int subjects = 1;subjects <= subjectOffered;subjects++ ){
+			while	
 			System.out.println("Entering score for student " + student);
-			System.out.print("Enter score for subject " + subjects+ " : ");
-			//int studentScore = input.nextInt();
-			studentGrades [student - 1][subjects-1] = input.nextInt();
+			
+			System.out.print("Enter score for subject " + subjects + " : ");
+
+			int studentScore = input.nextInt();
+
+			if  studentScore >= 0 &&  studentScore <= 100{
+				studentGrades [student - 1][subjects-1] = studentScore;
 
 			System.out.println("Saving >>>>>>>>>>>>>>>>>>>");
 			System.out.println("Saved successfully!!!");
@@ -36,9 +41,13 @@ public class StudentGrade{
 
 	displayScore(amountOfStudents, subjectOffered,studentGrades);
 
+	subjectSummary(subjectOffered,amountOfStudents,studentGrades);
+
 
 
  }
+
+
 
 	public static void displayScore(int amountOfStudents, int subjectOffered,int[][] studentGrades ){
 		System.out.println("========================================================");
@@ -84,6 +93,27 @@ public class StudentGrade{
 
    }
 
+	public static void subjectSummary(int subjectOffered,int amountOfStudents,int[][] studentGrades){
+	System.out.println("SUBJECT SUMMARY");
+	
+	int highestSubject = studentGrades [0][0];
+	for (int sub = 0;sub < subjectOffered;sub++){
+		for(int stud = 0; stud < amountOfStudents; stud++){
+			if (highestSubject < studentGrades [sub][stud]){
+				highestSubject = studentGrades [sub][stud];
+			}
+		}
+		System.out.print(highestSubject);
+		//System.out.print();
+	}
+
+	/*for (int summary = 1; summary <= subjectOffered;summary++){
+		System.out.print("Subject" + summary);
+		System.out.print("Highest scoring student is: Student" + summary);		
+	
+	}*/
+
+	}
 
 
 

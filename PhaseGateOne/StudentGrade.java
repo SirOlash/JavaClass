@@ -1,11 +1,10 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StudentGrade{
  public static void main(String... args){
 	Scanner input = new Scanner(System.in);
-
-	//ArrayList <Integer> subject = new ArrayList<Integer>();
 	
 	System.out.print("How many students do you have?: ");
 	int amountOfStudents = input.nextInt();
@@ -64,28 +63,43 @@ public class StudentGrade{
 	System.out.println("POS\t");
 
 	System.out.println("========================================================");
-	int total = 0;
 	
+	double [] sortedAverages = new double[amountOfStudents];
+	double [] average_array = new double [amountOfStudents]; 
+
+		
+
 	for(int count = 1; count <= amountOfStudents; count++){
 		System.out.print("Student" + count +"\t");
+		int total = 0;
 		for(int counts = 1; counts <= subjectOffered; counts++){
 			System.out.print(studentGrades[count - 1][counts -1 ] + "\t" );
 			total += studentGrades[count - 1][counts -1];
 			 
-	}
+		}
+		
 		
 		System.out.print(total + "\t");
 		double average = total / subjectOffered;
+		
 		System.out.printf("%.2f\t", average);
-		//System.out.print("%.2f\t", average);
 		
-		//int position = average;
+		sortedAverages[count-1] = average;
+		average_array[count-1] = average;
 		
 		
-		System.out.println();
 	
+		System.out.println();
+		
+
 
 	}
+	position(amountOfStudents,subjectOffered,studentGrades, sortedAverages,average_array);
+	
+	
+	
+	
+
 	
 	System.out.println("========================================================");
 	System.out.println();
@@ -97,22 +111,36 @@ public class StudentGrade{
 
    }
 
+
+
 	public static void subjectSummary(int subjectOffered,int amountOfStudents,int[][] studentGrades){
 	System.out.println("SUBJECT SUMMARY");
 	
 
-	int highestSubject = studentGrades [0][0];
-	for (int sub = 0;sub < subjectOffered;sub++){
-		for(int stud = 0; stud < amountOfStudents; stud++){
-			if (highestSubject < studentGrades [sub][stud]){
-				highestSubject = studentGrades [sub][stud];
+	int highestScore = -1;
+	int lowestScore = 101;
+	for (int i = 0;i < subjectOffered; i++){
+		System.out.printf("SUBJECT: %d%n", i+1);
+		int high = 0;
+		for( high = 0; high < amountOfStudents; high++){
+			if (highestScore < studentGrades [high][i]){
+				highestScore = studentGrades [high][i];
 			}
-			//System.out.println(highestSubject);
+			if (lowestScore > studentGrades [high][i]){
+				lowestScore = studentGrades [high][i];
+			}
 		}
+		int low = 101;
+		for( low = 0; low < amountOfStudents; low++){
+			if (lowestScore > studentGrades [low][i]){
+				lowestScore = studentGrades [low][i];
+			}
+		}
+			
+		System.out.printf("Highest scoring student is: Student %d scoring %d%n",high,highestScore);
+		System.out.printf("Lowest scoring student is: Student %d scoring %d%n",low,lowestScore);
+		//System.out.printf("%d,%d%n",highestScore, low);
 		
-		//System.out.println(sub);
-		//System.out.print(stud);
-
 	}
 
 	/*for (int summary = 1; summary <= subjectOffered; summary++){
@@ -120,6 +148,29 @@ public class StudentGrade{
 		System.out.print("Highest scoring student is: Student" + summary);		
 	
 	}*/
+
+	}
+
+
+
+
+	public static void position(int amountOfStudents, int subjectOffered,int[][] studentGrades,double[] sortedAverages,double []average_array){
+		int[] ranks = new int[amountOfStudents];
+		Arrays.sort(sortedAverages);
+	for (int i = 0; i < amountOfStudents; i++){
+		for (int j = 0; j < amountOfStudents; j++){
+			if (average_array[i] == sortedAverages[j] ){
+				ranks[i] = amountOfStudents - j;
+				break;
+			} 
+		}
+			
+	}
+		System.out.println("Student Averages and Positions: ");
+		for (int count = 0; count < amountOfStudents;count++ ){
+			 System.out.printf("Student %d: Average: %.2f, Position: %d\n", 
+                              count + 1, average_array[count], ranks[count]);
+		}
 
 	}
 

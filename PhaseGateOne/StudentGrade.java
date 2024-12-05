@@ -106,8 +106,6 @@ public class StudentGrade{
 	System.out.println("========================================================");
 
 
-   
-
 
    }
 
@@ -116,38 +114,68 @@ public class StudentGrade{
 	public static void subjectSummary(int subjectOffered,int amountOfStudents,int[][] studentGrades){
 	System.out.println("SUBJECT SUMMARY");
 	
+	/*for(int index = 1; index <= amountOfStudents; index++){ 
+		double [] sortedSubjectScore = new double[amountOfStudents];
+		double [] SubjectScore = new double [amountOfStudents];
 
-	int highestScore = -1;
-	int lowestScore = 101;
+
+	}*/	
+	
+
+	int highestScore;
+	int lowestScore ;
 	for (int i = 0;i < subjectOffered; i++){
 		System.out.printf("SUBJECT: %d%n", i+1);
-		int high = 0;
-		for( high = 0; high < amountOfStudents; high++){
+		highestScore = -1;
+		lowestScore = 101;
+		int sum = 0;
+		int passed = 0;
+		int fails = 0;
+ 
+		int hight = 0;
+
+		
+		for(int high = 0; high < amountOfStudents; high++){
+
+			sum += studentGrades [high][i];	
+	
+			if (studentGrades [high][i] > 40)passed ++;
+	
+			else{fails ++;}
+				
+					
+
 			if (highestScore < studentGrades [high][i]){
 				highestScore = studentGrades [high][i];
-			}
-			if (lowestScore > studentGrades [high][i]){
-				lowestScore = studentGrades [high][i];
+				hight = high + 1;
+				
 			}
 		}
-		int low = 101;
-		for( low = 0; low < amountOfStudents; low++){
+		int lowe = 0;
+		for(int low = 0; low < amountOfStudents; low++){
 			if (lowestScore > studentGrades [low][i]){
 				lowestScore = studentGrades [low][i];
+				lowe = low + 1;
 			}
 		}
 			
-		System.out.printf("Highest scoring student is: Student %d scoring %d%n",high,highestScore);
-		System.out.printf("Lowest scoring student is: Student %d scoring %d%n",low,lowestScore);
+		System.out.printf("Highest scoring student is: Student %d scoring %d%n",hight,highestScore);
+		System.out.printf("Lowest scoring student is: Student %d scoring %d%n",lowe,lowestScore);
+
+		System.out.printf("Total Score is: %d%n",sum);
 		//System.out.printf("%d,%d%n",highestScore, low);
+		double subjectAverage = sum/ amountOfStudents;
+		System.out.printf("Average score is: %.2f%n",subjectAverage);
+		System.out.printf("Number of passes: %d%n",passed);
+		System.out.printf("Number of Fails: %d%n",fails);
+		System.out.println();	
+
 		
+		
+	
 	}
 
-	/*for (int summary = 1; summary <= subjectOffered; summary++){
-		System.out.print("Subject" + summary);
-		System.out.print("Highest scoring student is: Student" + summary);		
-	
-	}*/
+			
 
 	}
 
@@ -157,14 +185,14 @@ public class StudentGrade{
 	public static void position(int amountOfStudents, int subjectOffered,int[][] studentGrades,double[] sortedAverages,double []average_array){
 		int[] ranks = new int[amountOfStudents];
 		Arrays.sort(sortedAverages);
-	for (int i = 0; i < amountOfStudents; i++){
-		for (int j = 0; j < amountOfStudents; j++){
-			if (average_array[i] == sortedAverages[j] ){
-				ranks[i] = amountOfStudents - j;
+	for (int counts = 0; counts < amountOfStudents; counts++){
+		for (int counter = 0; counter < amountOfStudents; counter++){
+			if (average_array[counts] == sortedAverages[counter] ){
+				ranks[counts] = amountOfStudents - counter;
 				break;
 			} 
 		}
-			
+	
 	}
 		System.out.println("Student Averages and Positions: ");
 		for (int count = 0; count < amountOfStudents;count++ ){
@@ -173,6 +201,34 @@ public class StudentGrade{
 		}
 
 	}
+
+
+
+/*public static void overallGrades(int passed,int fails,int subjectOffered
+){
+	int hardest_subject_failure = 0;
+	
+	int number = 0;
+
+	for (int index = 0;index < subjectOffered; index++){
+			if (hardest_subject_failure < fails){
+				hardest_subject_failure = fails;
+				number = index + 1;
+			}	
+		}
+	
+	for (int index = 0;index < subjectOffered; index++){
+		if (hardest_subject_failure < passed)
+			hardest_subject_failure = passed;
+		System.out.printf("The hardest subject is subject %d with %d failures",number,hardest_subject_failure);*/
+
+
+
+
+
+
+
+
 
 
 

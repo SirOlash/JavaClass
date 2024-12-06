@@ -7,12 +7,13 @@ public static void main(String[] args){
 	int size = input.nextInt();
 	int[] numbers = new int[size];
 	
-	boolean found = false;
 	System.out.println("Enter " + size +" integers: ");
 	for (int count = 0;count < numbers.length; count++)numbers[count] = input.nextInt();
 
 	System.out.print("Enter the element you want to check for: ");
 	int element = input.nextInt();
+
+	boolean found = false;
 	for (int counter = 0;counter < numbers.length; counter++)
 		if (element == numbers[counter]){
 			found = true; 
@@ -23,3 +24,5 @@ public static void main(String[] args){
 	
 }
 }
+
+

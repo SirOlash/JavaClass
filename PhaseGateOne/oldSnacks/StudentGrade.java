@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentGrade{
@@ -53,7 +52,7 @@ public class StudentGrade{
 
 
 	public static void displayScore(int amountOfStudents, int subjectOffered,int[][] studentGrades ){
-		System.out.println("========================================================");
+		System.out.println("============================================================");
 	System.out.print("STUDENT		");
 		for(int counter = 1; counter <= subjectOffered; counter++){  
 			System.out.print("SUB"+ counter + "\t");
@@ -62,48 +61,76 @@ public class StudentGrade{
 	System.out.print("AVE\t");
 	System.out.println("POS\t");
 
-	System.out.println("========================================================");
+	System.out.println("============================================================");
 	
 	double [] sortedAverages = new double[amountOfStudents];
 	double [] average_array = new double [amountOfStudents]; 
 
-		
-
+	int [] totalRow = new int[amountOfStudents];	
+	int total = 0;
+	double average = 0;
 	for(int count = 1; count <= amountOfStudents; count++){
-		System.out.print("Student" + count +"\t");
-		int total = 0;
+		//System.out.print("Student" + count +"\t");
+		total = 0;
 		for(int counts = 1; counts <= subjectOffered; counts++){
-			System.out.print(studentGrades[count - 1][counts -1 ] + "\t" );
 			total += studentGrades[count - 1][counts -1];
 			 
 		}
 		
+		totalRow[count-1] = total;
+		//System.out.print(total + "\t");
+		average = total / subjectOffered;
 		
-		System.out.print(total + "\t");
-		double average = total / subjectOffered;
+		//System.out.printf("%.2f\t", average);
 		
-		System.out.printf("%.2f\t", average);
+		
 		
 		sortedAverages[count-1] = average;
 		average_array[count-1] = average;
 		
 		
 	
-		System.out.println();
+		//System.out.println();
 		
 
 
 	}
-	position(amountOfStudents,subjectOffered,studentGrades, sortedAverages,average_array);
+
+		int[] ranks = new int[amountOfStudents];
+		Arrays.sort(sortedAverages);
+	for (int counts = 0; counts < amountOfStudents; counts++){
+		for (int counter = 0; counter < amountOfStudents; counter++){
+			if (average_array[counts] == sortedAverages[counter] ){
+				ranks[counts] = amountOfStudents - counter;
+				break;
+			} 
+		}
+	
+	}
+
+	for(int count = 1; count <= amountOfStudents; count++){
+		System.out.print("Student" + count +"\t");
+	for(int counts = 1; counts <= subjectOffered; counts++){
+			System.out.print(studentGrades[count - 1][counts -1 ] + "\t" );	 
+		}
+
+
+		System.out.print(totalRow[count-1] + "\t");
+		System.out.printf("%.2f\t\t", average_array[count-1]);
+		System.out.print(ranks[count-1]);
+		System.out.println();
+
+	}
+	//position(amountOfStudents,subjectOffered,studentGrades, sortedAverages,average_array);
 	
 	
 	
 	
 
 	
-	System.out.println("========================================================");
+	System.out.println("============================================================");
 	System.out.println();
-	System.out.println("========================================================");
+	System.out.println("============================================================");
 
 
 
@@ -194,7 +221,7 @@ public class StudentGrade{
 		}
 	
 	}
-		System.out.println("Student Averages and Positions: ");
+		//System.out.println("Student Averages and Positions: ");
 		for (int count = 0; count < amountOfStudents;count++ ){
 			 System.out.printf("Student %d: Average: %.2f, Position: %d\n", 
                               count + 1, average_array[count], ranks[count]);

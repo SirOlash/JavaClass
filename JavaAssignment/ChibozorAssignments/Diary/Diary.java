@@ -61,6 +61,7 @@ public class Diary{
 			}
 			else{System.out.print("Wrong Password!!!!");}
 		}
+		else {System.out.print("First Create a password");}
 	}
 	
 	public DiaryEntry findEntryById(String id){
@@ -88,7 +89,7 @@ public class Diary{
 			entries.remove(entry);
 			System.out.println("entry has been deleted");
       		} 
-		else {System.out.println("entry is null or diary is locked");}
+		else {System.out.println("entry does not exist or diary is locked");}
 		
 	}
 	public void viewEntry(String id) {

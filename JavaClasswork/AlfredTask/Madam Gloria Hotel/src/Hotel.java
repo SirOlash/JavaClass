@@ -45,6 +45,7 @@ public class Hotel {
         Room room = findRoom(roomNumber);
         if (room != null && room.isAvailable()) {
             room.setAvailable(false);
+            guest.setRoomNumber(roomNumber);
 
             LocalDate checkInDate = LocalDate.now();
             LocalDate checkOutDate = checkInDate.plusDays(nights);
@@ -70,18 +71,27 @@ public class Hotel {
         else {System.out.println("Room " + roomNumber + " is not available.");}
     }
 
-    public Guest findReference(String bookingReference) {
+    public void cancelBooking(String bookingReference) {
+        Guest guestToCancel = null;
+
         for (Guest guest : guestList) {
             if (guest.getBookingReference().equals(bookingReference)) {
-                return guest;
+                guestToCancel = guest;
+                break;
             }
         }
 
-        return null;
+        if (guestToCancel != null) {
+            Room room = findRoom(guestToCancel.getRoomNumber());
+            if (room != null){
+                room.setAvailable(true);
+            }
+            guestList.remove(guestToCancel);
+            System.out.println("Booking Cancelled for " + guestToCancel.getName());
+        }
+        else {System.out.println("No booking found for " + bookingReference);}
     }
-    public void cancelBooking(int roomNumber,Guest guest,int nights) {
 
-    }
 
 
 

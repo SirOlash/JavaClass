@@ -80,7 +80,7 @@ public class Diary{
 			entry.setContent(content);
 			 System.out.println("entry has been updated\nentry: " + content);
 		}
-		else {System.out.println("entry is null or diary is locked");}
+		else {System.out.println("entry does not exist or diary is locked");}
 	}
 	
 	public void deleteEntry(String id){

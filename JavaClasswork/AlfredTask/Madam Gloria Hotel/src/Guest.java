@@ -4,11 +4,13 @@ public class Guest {
     private String phoneNumber;
     private String email;
     private String bookingReference;
+    private int roomNumber;
 
-    public Guest(String name, String phoneNumber, String email, String bookingReference) {
+    public Guest(String name, String phoneNumber, String email, String bookingReference,int roomNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.roomNumber = roomNumber;
         setBookingReference();
     }
     public void setName(String name){
@@ -37,5 +39,11 @@ public class Guest {
     }
     public String getBookingReference(){
         return bookingReference;
+    }
+    public void setRoomNumber(int roomNumber){
+        this.roomNumber = roomNumber;
+    }
+    public int getRoomNumber(){
+        return roomNumber;
     }
 }

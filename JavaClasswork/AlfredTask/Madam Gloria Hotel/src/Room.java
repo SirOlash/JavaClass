@@ -35,6 +35,12 @@ public class Room {
     public double getRoomPrice() {
         return roomPrice;
    }
+    @Override
+    public String toString() {
+        return "=".repeat(87) + "\nRoom Number: " + roomNumber +
+                "   Type: " + roomType +
+                "   Price per Night: " + roomPrice + "  isAvailable: " + isAvailable +"\n" +"=".repeat(87);
+}
 
 
 

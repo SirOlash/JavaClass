@@ -6,7 +6,7 @@ public class Guest {
     private String bookingReference;
     private int roomNumber;
 
-    public Guest(String name, String phoneNumber, String email, String bookingReference,int roomNumber) {
+    public Guest(String name, String phoneNumber, String email,int roomNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -45,5 +45,9 @@ public class Guest {
     }
     public int getRoomNumber(){
         return roomNumber;
+    }
+    @Override
+    public String toString(){
+        return "name: " + name + ", phoneNumber: " + phoneNumber + ", email: " + email + ", bookingReference: " + bookingReference + ", roomNumber: " + roomNumber;
     }
 }

@@ -55,14 +55,14 @@ public class BookingReceipt {
     @Override
     public String toString() {
         return "Booking Receipt:\n" +
-                "   Name: " + name + "\n"
-                + " Phone: " + phone + "\n"
-                + " Email: " + email + "\n"
-                + " Room Number: " + roomNumber + "\n"
-                + " Room Type: " + roomType + "\n"
-                + " Total Price: " + price + "\n"
-                + " Check In Date: " + checkInDate + "\n"
-                + " Check Out Date: " + checkOutDate + "\n\n";
+                "  Name: " + name + "\n"
+                + "  Phone: " + phone + "\n"
+                + "  Email: " + email + "\n"
+                + "  Room Number: " + roomNumber + "\n"
+                + "  Room Type: " + roomType + "\n"
+                + "  Total Price: " + price + "\n"
+                + "  Check In Date: " + checkInDate + "\n"
+                + "  Check Out Date: " + checkOutDate + "\n\n";
     }
 
 }

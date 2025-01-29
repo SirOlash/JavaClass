@@ -21,7 +21,7 @@ public class Hotel {
     }
     public void createRoom() {
         //Room room = new Room();
-        for(int suite = 1; suite <= 4; suite++) {
+        for(int suite = 0; suite < 4; suite++) {
             rooms.add(new Room(100 + suite,"Suite",25000));
         }
         for (int doubleRoom = 0; doubleRoom < 6; doubleRoom++) {
@@ -31,8 +31,30 @@ public class Hotel {
             rooms.add(new Room(300 + single,"Single",10000));
         }
     }
-    public void addRoom(Room room) {
-        rooms.add(room);
+    public void addRoom() {
+        System.out.println("What type of room do you want to add?");
+        String type = input.nextLine().trim();
+        System.out.println("How many "+type+" rooms do you want to add?");
+        int roomsAdded = input.nextInt();
+        if(type.equalsIgnoreCase("Single")){
+            for (int single = 0; single < roomsAdded; single++) {
+                rooms.add(new Room(310 + single,"Single",10000));
+                System.out.println("Room "+ (310 + single) +" Successfully added");
+            }
+        }
+        else if(type.equalsIgnoreCase("Double")){
+            for (int doubleRoom = 0; doubleRoom < roomsAdded; doubleRoom++) {
+                rooms.add(new Room(206 + doubleRoom,"Double",15000));
+            }
+        }
+        else if(type.equalsIgnoreCase("Suite")){
+            for(int suite = 0; suite < roomsAdded; suite++) {
+                rooms.add(new Room(104 + suite,"Suite",25000));
+            }
+        }
+        else {System.out.println("Invalid Room-Typr");}
+
+
     }
     public Room findRoom(int roomNumber) {
         for (Room room : rooms) {
@@ -191,7 +213,7 @@ public class Hotel {
         }
         return null;
     }
-    public BookingReceipt findGuestWithBooking(String bookingReference) {
+    public BookingReceipt findReceiptWithBooking(String bookingReference) {
         for (BookingReceipt receipt : receipts) {
             if (receipt.getBookingReference().equalsIgnoreCase(bookingReference)) {
                 return receipt;
@@ -219,13 +241,23 @@ public class Hotel {
                 room.setAvailable(true);
             }
             guestList.remove(guestToCancel);
+            BookingReceipt receipt = searchReceiptByRoomNumber(guestToCancel.getRoomNumber());
+            receipts.remove(receipt);
             System.out.println("Booking Cancelled for " + guestToCancel.getName());
         }
         else {System.out.println("No booking found for " + bookingReference);}
     }
     public void searchReceiptByReference() {
-        String bookingRef;
-
+        //String bookingRef;
+        System.out.println("Enter your booking reference number: ");
+        String bookingRef = input.next().trim();
+        for (BookingReceipt receipt : receipts) {
+            if (receipt.getBookingReference().equalsIgnoreCase(bookingRef)) {
+                System.out.println(receipt);
+                return;
+            }
+        }
+        System.out.println("No booking found for " + bookingRef);
     }
     public BookingReceipt searchReceiptByRoomNumber(int roomNumber) {
         for (BookingReceipt receipt : receipts) {
@@ -239,24 +271,27 @@ public class Hotel {
         System.out.println("Enter room number: ");
         int roomNumber = input.nextInt();
         Room room = findRoom(roomNumber);
-        if (room != null) {
+        if (room != null && room.isAvailable()) {
             room.setAvailable(false);
             maintenanceRooms.add(roomNumber);
+            System.out.println("Room " + roomNumber + " has been marked for maintenance.");
         }
         else {System.out.println("Room " + roomNumber + " is not available.");}
     }
     public void roomsUnderMaintenance(){
-        for (int index = 0; index < maintenanceRooms.size(); index++ ) {
-            System.out.println("Room " + maintenanceRooms.get(index) + " is under maintenance.");
-        }
+        if (!maintenanceRooms.isEmpty()){
+            for (Integer maintenanceRoom : maintenanceRooms) {
+                System.out.println("Room " + maintenanceRoom + " is under maintenance.");
+            }
+        }else {System.out.println("There are no rooms under maintenance.");}
 
     }
     public void viewNotification(){
         System.out.println("Enter your booking reference number: ");
         String bookingReference = input.next().trim();
-        BookingReceipt receipt = findGuestWithBooking(bookingReference);
+        BookingReceipt receipt = findReceiptWithBooking(bookingReference);
         if (receipt != null) {
-            System.out.println("Notification sent to " + receipt.getName() + ":\nDear " + receipt.getName() +", this is a reminder for your stay at Naija Comfort Inn.\n Check-in Date: " + receipt.getCheckInDate() +"\nRoom Number: " + receipt.getRoomNumber() + "\nWe look forward to hosting you! ");
+            System.out.println("Notification sent to " + receipt.getName() + ":\nDear " + receipt.getName() +", this is a reminder for your stay at Naija Comfort Inn.\nCheck-in Date: " + receipt.getCheckInDate() +"\nRoom Number: " + receipt.getRoomNumber() + "\nWe look forward to hosting you! ");
         }
         else {System.out.println("No guest found with booking Number: " + bookingReference);}
 
@@ -276,8 +311,8 @@ public class Hotel {
         System.out.println("Total number of rooms: " + rooms.size());
         System.out.println("Total number of guests: " + guestList.size());
         System.out.println("Total number of rooms Booked: " + receipts.size());
-        double occupancyRate = (receipts.size()/rooms.size()) * 100;
-        System.out.println("Occupancy rate: " + occupancyRate);
+        double occupancyRate = ((double) receipts.size() /rooms.size()) * 100;
+        System.out.printf("Occupancy rate: %.3f%%%n", occupancyRate);
         double totalRevenue = 0;
         for (BookingReceipt receipt : receipts) {
             totalRevenue += receipt.getPrice();

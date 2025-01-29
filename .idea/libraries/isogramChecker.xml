@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="isogramChecker">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MrFemiTask/isogramChecker/opentest4j-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MrFemiTask/isogramChecker/apiguardian-api-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MrFemiTask/isogramChecker/junit-platform-console-standalone-1.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MrFemiTask/isogramChecker/junit-platform-commons-1.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MrFemiTask/isogramChecker/junit-jupiter-api-5.11.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

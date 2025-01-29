@@ -101,32 +101,35 @@ public class MainMenu {
 
                                     while (!backToMain) {
                                         System.out.println("\n====== Admin Menu ======");
-                                        System.out.println("1. View all Rooms");
-                                        System.out.println("2. View Guests Details");
-                                        System.out.println("3. Mark Rooms for Maintenance ");
-                                        System.out.println("4. View Rooms under Maintenance ");
-                                        System.out.println("5. View Reports");
-                                        System.out.println("6. Go back to Main Menu");
-                                        System.out.println("7. Enter your choice: ");
+                                        System.out.println("1. Add Rooms");
+                                        System.out.println("2. View all Rooms");
+                                        System.out.println("3. View Guests Details");
+                                        System.out.println("4. Mark Rooms for Maintenance ");
+                                        System.out.println("5. View Rooms under Maintenance ");
+                                        System.out.println("6. View Reports");
+                                        System.out.println("7. Go back to Main Menu");
+                                        System.out.println(" Enter your choice: ");
                                         int adminChoice = input.nextInt();
                                         input.nextLine();
                                         switch (adminChoice) {
-                                            case 1:
-                                                hotel.viewAllRooms();
+                                            case 1: hotel.addRoom();
                                                 break;
                                             case 2:
-                                                hotel.viewAllBookings();
+                                                hotel.viewAllRooms();
                                                 break;
                                             case 3:
-                                                hotel.maintenance();
+                                                hotel.viewAllBookings();
                                                 break;
                                             case 4:
-                                                hotel.roomsUnderMaintenance();
+                                                hotel.maintenance();
                                                 break;
                                             case 5:
-                                                hotel.generateReport();
+                                                hotel.roomsUnderMaintenance();
                                                 break;
                                             case 6:
+                                                hotel.generateReport();
+                                                break;
+                                            case 7:
                                                 backToMain = true;
                                                 break;
                                             default:System.out.println("\nInvalid choice. Please try again.");
@@ -137,7 +140,7 @@ public class MainMenu {
                                 else System.out.println("Invalid Password. Access denied.!!!");
                             break;
                         case 8: //running = false;
-                                System.out.println("Exiting...");
+                                System.out.println("Thanks for using Naija Comfort Inn App.Goodbye...");
                             return;
                     }
                 }

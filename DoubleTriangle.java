@@ -1,6 +1,6 @@
 public class DoubleTriangle{
 public static void main(String... args){
-	twoTriangle(8);
+	twoTriangle(8e);
 	
 }
 public static void printStar(){

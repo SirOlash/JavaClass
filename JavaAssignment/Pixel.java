@@ -33,8 +33,7 @@ public static void main(String[] args){
 				
 			
 }
-
-	System.out.print(Arrays.toString(values));
+		System.out.print(Arrays.toString(values));
 }
 }
 	

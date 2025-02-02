@@ -13,6 +13,7 @@ public class Account{
         this.balance = 0;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accountNumber = accountNumber;
     }
     public int getBalance(String pin){
         if (!pin.equals(this.pin)){
@@ -36,13 +37,13 @@ public class Account{
             throw new IllegalArgumentException("Insufficient Balance");
         }
         if (!pin.equals(this.pin)) {
-            throw new IllegalArgumentException("Pin does not match");
+            throw new IllegalArgumentException("Incorrect Pin");
         }
         balance -= amount;
     }
     public void updatePin(String oldPin,String newPin) {
         if (oldPin.trim().isEmpty() || newPin.trim().isEmpty()) {
-            throw new IllegalArgumentException("Pin cannot be null");
+            throw new IllegalArgumentException("Pin cannot be empty");
         }
         if (!oldPin.equals(pin)) {
             throw new IllegalArgumentException("Pin does not match");

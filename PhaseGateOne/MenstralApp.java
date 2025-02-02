@@ -46,7 +46,7 @@ public class MenstralApp{
 
 	System.out.println("");
 
-	System.out.println("Your first safe date should start from " + date + " And end at "+date.plusDays(results[2]) );
+	System.out.println("Your first safe period should start from " + date + " And end at "+date.plusDays(results[2]));
 
 	System.out.println("");
 

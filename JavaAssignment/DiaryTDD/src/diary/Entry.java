@@ -1,7 +1,8 @@
 package diary;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+import java.time.format.DateTimeFormatter;
 
 public class Entry {
     private int id;
@@ -13,7 +14,7 @@ public class Entry {
         this.id = id;
         this.title = title;
         this.body = body;
-        this.dateCreated = LocalDateTime.now().toString();
+        this.dateCreated = formatDateTime(LocalDateTime.now());
     }
 
 
@@ -52,7 +53,11 @@ public class Entry {
     }
 
     public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated.toString();
+        this.dateCreated = formatDateTime(dateCreated);
+    }
+    private String formatDateTime(LocalDateTime date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy, HH:mma");
+        return date.format(formatter);
     }
     @Override
     public String toString() {

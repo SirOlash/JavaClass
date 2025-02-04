@@ -17,7 +17,9 @@ public class Diary {
         this.isLocked = false;
         this.entries = new ArrayList<>();
     }
-
+    public boolean isCorrectPassword(String password) {
+        return this.password.equals(password);
+    }
     public boolean isLocked() {
         return isLocked;
     }
@@ -38,8 +40,16 @@ public class Diary {
     public String getUserName() {
         return userName;
     }
+    public void changePassword(String oldPassword, String newPassword) {
+        if (this.password.equals(oldPassword) && newPassword.matches("^[a-zA-Z0-9]{4,}$")) {
+            this.password = newPassword;
+        }
+        else {
+            System.out.println("Incorrect password");
+        }
+    }
 
-    public void createEntry(String title, String body) {
+    public Entry createEntry(String title, String body) {
         if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Title cannot be null or empty");
         }
@@ -49,6 +59,7 @@ public class Diary {
         Entry entry = new Entry(id, title, body);
         entries.add(entry);
         id++;
+        return entry;
     }
 
 

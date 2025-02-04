@@ -14,6 +14,7 @@ public class Diaries {
             throw new IllegalArgumentException("Password cannot be null or empty");
         }
         diarylist.add(new Diary(userName, password));
+        System.out.println("Your Diary has been Successfully created!");
     }
     public Diary getDiaryByUserName(String userName) {
         for (Diary diary : diarylist) {
@@ -25,10 +26,11 @@ public class Diaries {
     }
     public void deleteDiaryByUserName(String userName,String password) {
         Diary diary = getDiaryByUserName(userName);
-        if (diary != null) {
+        if (diary != null && diary.isCorrectPassword(password)) {
             diarylist.remove(diary);
+            System.out.println("Diary deleted successfully");
         }
-        else {System.out.println("Diary not found");}
+        else {System.out.println("Invalid username or password");}
     }
 
 

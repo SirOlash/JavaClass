@@ -33,7 +33,6 @@ public class BikeMethods {
         updateGear();
 
     }
-
     public void decelerate() {
         if (bikeGear == 1)bikeSpeed--;
         else if (bikeGear == 2)bikeSpeed -=2;

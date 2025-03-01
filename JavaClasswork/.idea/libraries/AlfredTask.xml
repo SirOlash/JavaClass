@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="AlfredTask">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AlfredTask/apiguardian-api-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AlfredTask/junit-platform-console-standalone-1.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AlfredTask/junit-platform-commons-1.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AlfredTask/junit-jupiter-api-5.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/AlfredTask/opentest4j-1.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Diary {
-    private String userName;
+    private final String userName;
     private String password;
     private boolean isLocked;
     private final List <Entry> entries;
@@ -17,9 +17,11 @@ public class Diary {
         this.isLocked = false;
         this.entries = new ArrayList<>();
     }
+
     public boolean isCorrectPassword(String password) {
         return this.password.equals(password);
     }
+
     public boolean isLocked() {
         return isLocked;
     }

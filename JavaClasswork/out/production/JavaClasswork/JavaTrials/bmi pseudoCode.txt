@@ -1,0 +1,16 @@
+Stage 1
+Collect the user's weight in kilograms
+collect the user's height in meters 
+calculate the BMI
+Display results
+
+Stage 2
+Prompt the user to enter their weight in kilograms
+Save the collected value as "weight"
+Prompt the user to enter their height in meters
+Save the collected value as "height"
+Calculate height * height
+Save the calculated result as "heightSquared"
+Calculate weight/heightSquared
+Save the calculated result as "bmi"
+display bmi

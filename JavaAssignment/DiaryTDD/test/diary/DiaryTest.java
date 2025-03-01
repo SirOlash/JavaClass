@@ -27,6 +27,7 @@ public class DiaryTest {
         diary.unlockDiary("1234");
         assertFalse(diary.isLocked());
     }
+
     @Test
     public void testThatYouCanCreateEntry(){
         diary.createEntry("title","body");

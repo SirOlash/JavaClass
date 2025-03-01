@@ -65,12 +65,12 @@ public class MainApplication {
         if (diary.isCorrectPassword(oldPassword)){
             String newPassword = passwordInput("Enter your new password: ");
             diary.changePassword(oldPassword, newPassword);
+            loadingScreen("Verifying Password");
             System.out.println("Password changed successfully");
             diaryMenu(userName);
         }
         else {System.out.println("Incorrect password!!!");}
             diaryMenu(userName);
-
 
     }
     private static void updateDiary(String userName) {
@@ -83,9 +83,11 @@ public class MainApplication {
                 if (diary.getEntryById(id) != null) {
                     String newTitle = stringInput("Enter New Title: ",null,"Title cannot be empty");
                     diary.updateTitle(id, newTitle);
+                    loadingScreen("Updating Title");
                     System.out.println("Title updated to " + newTitle + "Successfully");
                     updateDiary(userName);
                 }
+
                 else {System.out.println("Id does not exist");}
                     updateDiary(userName);
                     break;
@@ -93,6 +95,7 @@ public class MainApplication {
                 if (diary.getEntryById(idTwo) != null) {
                     String newContent = stringInput("Enter New Content: ",null,"Content cannot be empty");
                     diary.updateBody(idTwo, newContent);
+                    loadingScreen("Updating Content");
                     System.out.println("Content updated to " + newContent + "Successfully");
                     updateDiary(userName);
                 }
@@ -115,6 +118,7 @@ public class MainApplication {
         Diary diary = diaries.getDiaryByUserName(userName);
         String password = passwordInput("Enter your password");
         diary.unlockDiary(password);
+        loadingScreen("Verifying Password");
         System.out.println("Diary has been unlocked successfully");
         diaryMenu(userName);
     }
@@ -128,6 +132,7 @@ public class MainApplication {
             }
             else {
                 diary.deleteEntry(id);
+                loadingScreen("Deleting");
                 System.out.println("Entry deleted successfully");
                 diaryMenu(userName);
             }
@@ -161,6 +166,7 @@ public class MainApplication {
             String title = stringInput("Enter the title of your Entry: ",null,"Title cannot be empty");
             String body = stringInput("Enter the body of your Entry: ",null,"Body cannot be empty");
             Entry entry = diary.createEntry(title,body);
+            loadingScreen("Creating Entry");
             System.out.println("Your entry with ID: " + entry.getId() + " has been saved successfully");
             diaryMenu(userName);
         }
@@ -172,7 +178,8 @@ public class MainApplication {
 
     private static void deleteDiary() {
         String userName = nameInput();
-        String password = passwordInput("Enter your password");
+        String password = passwordInput("Enter your password: ");
+        loadingScreen("Deleting Diary");
         diaries.deleteDiaryByUserName(userName,password);
         goToMainMenu();
 
@@ -190,8 +197,10 @@ public class MainApplication {
 
     private static void createDiary() {
         String userName = nameInput();
-        String password = passwordInput("Enter your password");
+        String password = passwordInput("Enter your password: ");
         diaries.createDiary(userName, password);
+        loadingScreen("Creating Diary");
+        System.out.println("Your Diary has been Successfully created!");
         diaryMenu(userName);
     }
 
@@ -230,6 +239,18 @@ public class MainApplication {
                 "^[a-zA-Z]+( [a-zA-Z]+)?$",
                 "Name can't be empty or contain numbers!"
         );
+    }
+    private static void loadingScreen(String message) {
+        System.out.print(message);
+         for (int index = 1;index < 6; index++) {
+            System.out.print(">");
+            try{
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+            System.out.println();
     }
 
 }

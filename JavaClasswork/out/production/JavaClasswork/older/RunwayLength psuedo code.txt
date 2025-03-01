@@ -1,0 +1,18 @@
+Stage 1 
+Collect the Acceleration and take off speed of the airplane from the user 
+Calculate the runway length 
+Display result
+
+Stage 2
+Prompt the user to enter the acceleration of the airplane in meters/seconds squared
+Save the collected value as "accelerate"
+Prompt the user to enter the speed of the airplane in meters/seconds
+Save the collected value as "speed"
+calculate speed * speed 
+save the calculated value as "speedSquared"
+Calculate 2 * accelerate 
+save the calculated value as "acceleration"
+calculate speedSquared/acceleration 
+save the calculated value as "length"
+Display length 
+ 

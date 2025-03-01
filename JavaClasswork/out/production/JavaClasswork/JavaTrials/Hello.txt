@@ -1,0 +1,7 @@
+stage 1:
+display welcome to java 101
+stage 2:
+display welcome to java 101 using print
+display welcome to java 101 using printf
+display welcome to java 101 using println
+

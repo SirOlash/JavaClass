@@ -48,8 +48,9 @@ public class MainMenu {
     private static void createAccount(){
         String firstName = stringInput("Enter first name: ","[a-zA-Z]+","Enter a valid first name!!");
         String lastName = stringInput("Enter last name: ","[a-zA-Z]+","Enter a valid last name!!");
-        String pin = pinInput();
+        String pin = pinInput("Enter your pin: ");
         Account account = bank.createAccount(firstName, lastName, pin);
+        loadingScreen();
         System.out.println("Account with account number: " + account.getAccountNumber() + " created Successfully");
         System.out.println();
         goToMainMenu();
@@ -60,6 +61,7 @@ public class MainMenu {
             bank.getAccount(accountNumber);
             int amount = intInput("Enter amount to deposit: ");
             bank.deposit(accountNumber, amount);
+            loadingScreen();
             System.out.println("Deposited NGN" + amount + " to accountNumber: " + accountNumber);
 
         }
@@ -71,13 +73,15 @@ public class MainMenu {
         }
 
     }
+
     private static void withdrawal(){
         int accountNumber = intInput("Enter account number: ");
         try {
             bank.getAccount(accountNumber);
             int amount = intInput("Enter amount to withdraw: ");
-            String pin = pinInput();
+            String pin = pinInput("Enter your pin: ");
             bank.withdraw(accountNumber, amount, pin);
+            loadingScreen();
             System.out.println("You just withdrew " + amount + " from " + accountNumber);
         }
         catch(Exception e){
@@ -99,14 +103,16 @@ public class MainMenu {
             bank.getAccount(senderAccountNumber);
             bank.getAccount(receiverAccountNumber);
             int amount = intInput("Enter amount to transfer: ");
-            String senderPin = stringInput("Enter Sender's pin: ","^[a-zA-Z0-9]{4,}$","PIN should contain minimum of 4 characters!! ");
+            String senderPin = pinInput("Enter senders pin: ");
             bank.transfer(senderAccountNumber,receiverAccountNumber,amount,senderPin);
-            System.out.println("You just transferred NGN" + amount + " to Account Number " + senderAccountNumber + " from Account Number" + receiverAccountNumber);
+            loadingScreen();
+            System.out.println("You just transferred NGN" + amount + " to Account Number " + receiverAccountNumber + " from Account Number" + senderAccountNumber);
         }
         catch(Exception e){
             System.out.println(e.getMessage());
         }
         finally{
+            System.out.println("hshsh");
             goToMainMenu();
         }
 
@@ -115,8 +121,9 @@ public class MainMenu {
         int accountNumber = intInput("Enter account number: ");
         try{
             bank.getAccount(accountNumber);
-            String pin = pinInput();
+            String pin = pinInput("Enter your PIN: ");
             double balance = bank.checkBalance(accountNumber,pin);
+            loadingScreen();
             System.out.println("Your balance is " + balance);
         }
         catch(Exception e){
@@ -130,9 +137,10 @@ public class MainMenu {
         int accountNumber = intInput("Enter the account number whose pin you want to update: ");
         try{
             bank.getAccount(accountNumber);
-            String oldPin = stringInput("Enter your old pin: ","^[a-zA-Z0-9]{4,}$","PIN should contain minimum of 4 characters!! ");
-            String newPin = stringInput("Enter new pin: ","^[a-zA-Z0-9]{4,}$","PIN should contain minimum of 4 characters!! ");
+            String oldPin = pinInput("Enter your old pin: ");
+            String newPin = pinInput("Enter your new pin: ");
             bank.updatePin(accountNumber,oldPin,newPin);
+            loadingScreen();
             System.out.println("Your new pin has been successfully updated");
         }
         catch(Exception e){
@@ -156,16 +164,16 @@ public class MainMenu {
         }
     }
 
-    private static double doubleInput(String message){
-        System.out.print(message + " ");
-        while(!scanner.hasNextInt()){
-            System.out.println("Invalid input. Please enter a number");
-            scanner.next();
-        }
-        int value = scanner.nextInt();
-        scanner.nextLine();
-        return value;
-    }
+//    private static double doubleInput(String message){
+//        System.out.print(message + " ");
+//        while(!scanner.hasNextInt()){
+//            System.out.println("Invalid input. Please enter a number");
+//            scanner.next();
+//        }
+//        int value = scanner.nextInt();
+//        scanner.nextLine();
+//        return value;
+//    }
 
     private static int intInput(String message) {
         System.out.print(message + " ");
@@ -177,12 +185,38 @@ public class MainMenu {
         scanner.nextLine();
         return value;
     }
-    private static String pinInput() {
+    private static String pinInput(String prompt) {
         return stringInput(
-                "Enter your PIN: ",
+                prompt,
                 "^[a-zA-Z0-9]{4,}$",
                 "PIN should contain a minimum of 4 characters (letters or numbers)!"
         );
+    }
+    private static void loadingScreen() {
+        System.out.print("Please Wait");
+       // int duration = 3000;
+//        String prompt = "LOADING";
+//        int delay = duration/prompt.length();
+//        for (char letter: prompt.toCharArray() ) {
+//            System.out.print(letter + " ");
+//            try{
+//                Thread.sleep(delay);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//        }
+//        System.out.println();
+//        }
+        //int delay = duration/10;
+        for (int index = 1;index < 6; index++) {
+            System.out.print(">");
+            try{
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+        System.out.println();
     }
 
 

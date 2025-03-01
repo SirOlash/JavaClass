@@ -1,0 +1,22 @@
+Stage 1
+Collect the user's weight in pounds
+convert to kilograms
+collect the user's height in inches
+convert to meters 
+calculate the BMI
+Display results
+
+Stage 2
+Prompt the user to enter their weight in pounds
+Save the collected value as "weightPounds"
+Prompt the user to enter their height in meters
+Save the collected value as "heightInches"
+calculate weightPounds * 0.45359237
+save the calculated result as "weightKilogram"
+calculate heightInches * 0.0254
+save the calculated result as "heightMeters" 
+Calculate heightMeters * heightMeters
+Save the calculated result as "heightMetersSquared"
+Calculate weightKilogram/heightMetersSquared
+Save the calculated result as "bmi"
+display bmi

@@ -1,0 +1,14 @@
+stage 1;
+prompt the user for their name
+store the name
+display Hi (username), Nice to meet you with print
+display Hi (username), Nice to meet you with println
+display Hi (username), Nice to meet you with printf
+
+stage 2
+prompt the user to enter their name
+collect the name
+save the name with "name"
+display Hi (username), Nice to meet you with print
+display Hi (username), Nice to meet you with printf
+display Hi (username), Nice to meet you with println

@@ -14,7 +14,9 @@ public class Diaries {
             throw new IllegalArgumentException("Password cannot be null or empty");
         }
         diarylist.add(new Diary(userName, password));
-        System.out.println("Your Diary has been Successfully created!");
+    }
+    public int getSize(){
+        return diarylist.size();
     }
     public Diary getDiaryByUserName(String userName) {
         for (Diary diary : diarylist) {

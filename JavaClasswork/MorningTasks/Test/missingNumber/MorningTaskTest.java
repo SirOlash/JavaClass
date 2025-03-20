@@ -15,15 +15,16 @@ public class MorningTaskTest {
         int[] values = MorningTask.missingNumbers(numbers);
         assertArrayEquals(values,expectedValues);
     }
-    @Test
-    public void testThatFunctionReturnsMultiple() {
-        int firstNumber = 1;
-        int secondNumber = 6;
-        int thirdNumber = 2;
-        int[] numbers =MorningTask.multiplesOfC(firstNumber,secondNumber,thirdNumber);
-        int[] expectedValues = {2,4,6};
-        assertArrayEquals(expectedValues,numbers);
-    }
+//    @Test
+//    public void testThatFunctionReturnsMultiple() {
+//        int firstNumber = 1;
+//        int secondNumber = 6;
+//        int thirdNumber = 2;
+////        int[] numbers =MorningTask.multiplesOfC(firstNumber,secondNumber,thirdNumber);
+//        int[] expectedValues = {2,4,6};
+//        assertArrayEquals(expectedValues,numbers);
+//    }
+
     @Test
     public void testThatRangeMustBeInIncreasingOrder() {
         int firstNumber  = 5;

@@ -8,7 +8,6 @@ public class Diary {
     private String password;
     private boolean isLocked;
     private final List <Entry> entries;
-
     private int id = 1;
 
     public Diary(String userName, String password) {
@@ -87,3 +86,5 @@ public class Diary {
         entry.setBody(body);
     }
 }
+
+

@@ -18,6 +18,7 @@ public class Diaries {
     public int getSize(){
         return diarylist.size();
     }
+
     public Diary getDiaryByUserName(String userName) {
         for (Diary diary : diarylist) {
             if (diary.getUserName().equals(userName)) {
@@ -26,6 +27,7 @@ public class Diaries {
         }
         return null;
     }
+
     public void deleteDiaryByUserName(String userName,String password) {
         Diary diary = getDiaryByUserName(userName);
         if (diary != null && diary.isCorrectPassword(password)) {
